@@ -9,7 +9,7 @@ public class BookController {
 	
 	@RequestMapping("/index")
 	public String senToWeb(Model model) {
-		return null;
+		return "index";
 	}
 
 }
