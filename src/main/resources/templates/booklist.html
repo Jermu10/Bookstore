@@ -7,19 +7,28 @@
 <body>
 	<h1>Welcome to Bookstore!</h1>
 	
-	<p>Title____Author____Year____ISBN</p>
 	<table>
 		<tbody>
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Year</th>
+				<th>ISBN</th>	
+			</tr>
+			
 			<tr th:each = "book : ${books}">
 				<td th:text=${book.title}></td>
 				<td th:text=${book.author}></td>
 				<td th:text=${book.year}></td>
 				<td th:text=${book.isbn}></td>
 				<td><a th:href="@{/delete/{id}(id=${book.id})}">Delete</a></td>
+				<td><a th:href="@{/edit/{id}(id=${book.id})}">Edit</a></td>
 			</tr>
 		</tbody>
 	</table>
-			
+	
+	<a href="/add" class="btn btn-primary">Add book</a>
+	
 
 
 </body>
