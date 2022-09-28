@@ -24,12 +24,11 @@ public class CategoryController {
 	@GetMapping(value="/addcategory")
 	public String addCategory(Model model) {
 		model.addAttribute("category", new Category());
-		// model.addAttribute("categories", crepository.findAll());
 		return "addcategory";
 	}
 	
 	@PostMapping(value = "/savec")
-	public String saveC(Category category) {
+	public String savec(Category category) {
 		crepository.save(category);
 		return "redirect:categorylist";
 	}
