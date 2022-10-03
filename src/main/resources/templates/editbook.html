@@ -14,7 +14,12 @@
 		<input type="number" th:field="*{year}" />
 		<input type="text" th:field="*{isbn}" />
 		<input type="text" th:field="*{price}" />
-		<input type="submit" class="btn btn-primary" value="Save">	
+		<input type="submit" class="btn btn-primary" value="Save">
+		
+		<select id="category" th:field="${book.category}" class="form-control">
+			<option th:each="category: ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option>
+		</select>
+			
 	</form>
 </body>
 </html>
